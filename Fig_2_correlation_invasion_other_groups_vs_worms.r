@@ -53,38 +53,52 @@
 
 
 	# PLANTS ---------------
-		g_correl_plants <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Plants, "Plants") #, plant_breaks, plant_breaks_labels
+
+		points_plants <- get_reg_points(x = states_inv_rasr_sf$Plants, y = states_inv_rasr_sf$nsp_alien)
+
+		g_correl_plants <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Plants, "Plants", points_plants) #, plant_breaks, plant_breaks_labels
 		g_correl_plants_fig <- ggdraw() +  
 						draw_plot(g_correl_plants, 0, 0, 1, 1) +
 						draw_image(plants_fig,  0.77, .3, .23, .20) +
 						#draw_image(worm_fig,  0.18, .8, .15, .15) +
-						annotate(geom = "text", x = .28, y = .89, label = paste("italic(r)==","italic('.77')~',' * ~italic('  p<2.2e-16')"), parse = TRUE, hjust = 0, size = 3, col = "grey40")
+						annotate(geom = "text", x = .28, y = .88, label = paste("italic(r)==","italic('.77')~',' * ~italic('  p<2.2e-16')"), parse = TRUE, hjust = 0, size = 3, col = "grey40")
+
 
 	# SPIDERS ---------------
-		g_correl_spiders <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Spiders, "Spiders") #, states_inv_rasr_sf$fill_birds,birds_breaks,, birds_breaks_labels
+
+		points_spiders <- get_reg_points(x = states_inv_rasr_sf$Spiders, y = states_inv_rasr_sf$nsp_alien)
+
+		g_correl_spiders <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Spiders, "Spiders", points_spiders) #, states_inv_rasr_sf$fill_birds,birds_breaks,, birds_breaks_labels
 		g_correl_spiders_fig <- ggdraw() +  
 							draw_plot(g_correl_spiders, 0, 0, 1, 1) +
 							draw_image(spiders_fig,  0.75, .23, .22, .22) +
 							#draw_image(worm_fig,  0.18, .8, .15, .15) +
-							annotate(geom = "text", x = .28, y = .89, label = paste("italic(r)==","italic('.73')~',' * ~italic(' p= 2.2e-16')"), parse=TRUE, hjust = 0, size = 3, col = "grey40")
+							annotate(geom = "text", x = .28, y = .88, label = paste("italic(r)==","italic('.73')~',' * ~italic(' p= 2.2e-16')"), parse=TRUE, hjust = 0, size = 3, col = "grey40")
 
 
 	# MAMMALS ---------------
-		g_correl_mammals <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Mammals, "Mammals") #, states_inv_rasr_sf$fill_birds,birds_breaks,, birds_breaks_labels
+
+		points_mammals <- get_reg_points(x = states_inv_rasr_sf$Mammals, y = states_inv_rasr_sf$nsp_alien)
+
+		g_correl_mammals <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Mammals, "Mammals", points_mammals) #, states_inv_rasr_sf$fill_birds,birds_breaks,, birds_breaks_labels
 		#g_correl_mammals <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Mammals, states_inv_rasr_sf$fill_mammals, "Mammals", mammals_breaks,mammals_breaks_labels)
 		g_correl_mammals_fig <- ggdraw() +  
 								draw_plot(g_correl_mammals, 0, 0, 1, 1) +
 								draw_image(mammals_fig,  0.7, .22, .3, .3) +
 								#draw_image(worm_fig,  0.18, .8, .15, .15) +
-								annotate('text', x = .28, y = .89, label = paste("italic(r)==","italic('.42')~',' * ~italic(' p= 1.4e-07')"), parse=TRUE, hjust = 0, size = 3, col = "grey40")
+								annotate('text', x = .28, y = .88, label = paste("italic(r)==","italic('.42')~',' * ~italic(' p= 1.4e-07')"), parse=TRUE, hjust = 0, size = 3, col = "grey40")
 
 	# BIRDS ---------------
-		g_correl_birds <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Birds, "Birds") #, states_inv_rasr_sf$fill_birds,birds_breaks,, birds_breaks_labels
+
+
+		points_birds <- get_reg_points(x = states_inv_rasr_sf$Birds, y = states_inv_rasr_sf$nsp_alien)
+
+		g_correl_birds <- plot_correl(states_inv_rasr_sf, states_inv_rasr_sf$Birds, "Birds", points_birds) #, states_inv_rasr_sf$fill_birds,birds_breaks,, birds_breaks_labels
 		g_correl_birds_fig <- ggdraw() +  
 						draw_plot(g_correl_birds, 0, 0, 1, 1) +
 						draw_image(birds_fig,  0.79, .28, .16, .16) +
 						#draw_image(worm_fig,  0.18, .8, .15, .15) +
-						annotate(geom = "text", x = .28, y = .89, label = paste("italic(r)==","italic('.62')~',' * ~italic(' p=5.7e-13')"), parse=TRUE, hjust = 0, size = 3, col = "grey40")
+						annotate(geom = "text", x = .28, y = .88, label = paste("italic(r)==","italic('.62')~',' * ~italic(' p=5.7e-13')"), parse=TRUE, hjust = 0, size = 3, col = "grey40")
 	
 # complete figure
 
